@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerien.Köln - Die Chronik der Kölner Galerien</title>
+<meta name="robots" content="index, follow">
+    <meta name="description" content="Die definitive Chronik der Kölner Kunst- und Galeriengeschichte. Entdecke ein umfassendes Verzeichnis wichtiger Kölner Galerien von der Gründerzeit bis heute.">
+    <link rel="canonical" href="https://www.deine-domain.de/">
+
+    <meta property="og:title" content="Galerien.Köln: Das Kunst-Archiv der Stadt">
+    <meta property="og:description" content="Die definitive Chronik der Kölner Kunst- und Galeriengeschichte. Entdecke ein umfassendes Verzeichnis wichtiger Kölner Galerien von der Gründerzeit bis heute.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.deine-domain.de/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+    <meta property="og:locale" content="de_DE">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Galerien.Köln: Das Kunst-Archiv der Stadt">
+    <meta name="twitter:description" content="Die definitive Chronik der Kölner Kunst- und Galeriengeschichte. Entdecke ein umfassendes Verzeichnis wichtiger Kölner Galerien von der Gründerzeit bis heute.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+    
+
+
+<style>
+    :root {
+        --color-primary: #1e1e1e;
+        --color-secondary: #f8f8f8;
+        --color-accent: #b8985c;
+        --color-text-light: #f8f8f8;
+        --color-text-dark: #3a3a3a;
+    }
+
+    body {
+        /* Eine System-Font-Stack für den Fließtext */
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background-color: var(--color-secondary);
+        color: var(--color-text-dark);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4 {
+        /* Kontrastreiche Serifen-Schriftart für die Überschriften */
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-weight: 700;
+    }
+
+    .hero-pattern {
+        background-color: var(--color-primary);
+    }
+
+    .nav-bg {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+    }
+
+    .gallery-item {
+        transition: all 0.3s ease;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .gallery-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline-item {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 40px;
+    }
+
+    .timeline-item:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--color-accent);
+    }
+
+    .timeline-connector {
+        position: absolute;
+        left: 5px;
+        top: 20px;
+        bottom: -40px;
+        width: 2px;
+        background: var(--color-accent);
+    }
+
+    .alphabet-nav a {
+        padding: 4px 8px;
+        margin: 0 2px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+
+    .alphabet-nav a:hover,
+    .alphabet-nav a.active {
+        background-color: var(--color-accent);
+        color: var(--color-text-light);
+        border-radius: 4px;
+    }
+
+    .gallery-list-container > div {
+        display: none;
+    }
+
+    .gallery-list-container > div.active {
+        display: block;
+    }
+</style>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="fixed w-full z-50 nav-bg py-4 px-6 shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold" style="color: var(--color-primary);">Galerien.Köln</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#chronik" class="hover:text-gray-700 transition">Chronik</a>
+                <a href="#galerien" class="hover:text-gray-700 transition">Galerien</a>
+                <a href="#ueber-uns" class="hover:text-gray-700 transition">Über uns</a>
+            </div>
+          <a href="domain.html" class="px-5 py-2 rounded-full bg-black text-white font-medium">Domain kaufen</a>
+        </div>
+    </nav>
+
+    <section class="hero-pattern min-h-screen pt-24 pb-16 px-6 flex items-center">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white">Die Chronik der<br>Kölner Galerien</h1>
+                <p class="text-xl mb-8 text-gray-300">Das definitive Archiv und Verzeichnis der Kunstlandschaft Kölns.</p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="px-6 py-3 rounded-full bg-white text-gray-700 font-medium"><a href="#chronik">Zur Chronik</a></button>
+                    <button class="px-6 py-3 rounded-full text-white font-medium" style="background-color: var(--color-accent);"><a href="#galerien">Galerien entdecken</a></button>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute -inset-6 bg-white rounded-2xl rotate-3 opacity-10"></div>
+                <div class="absolute -inset-3 bg-gray-700 rounded-2xl -rotate-2 opacity-10"></div>
+                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                     alt="Kunst in Köln" class="relative rounded-2xl shadow-xl w-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <section id="chronik" class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16" style="color: var(--color-primary);">Kölns Kunstgeschichte</h2>
+
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Von den Anfängen bis heute</h3>
+                    <p class="mb-6 text-lg">Köln blickt auf eine über 2000-jährige Kunstgeschichte zurück. Unsere Chronik bietet eine tiefgehende Auseinandersetzung mit den bedeutendsten Galerien, Künstlern und Epochen, die die Stadt geprägt haben.</p>
+                    <p class="text-lg">Von den frühen römischen Mosaiken bis zu den avantgardistischen Bewegungen der Nachkriegszeit, jedes Kapitel dokumentiert die Entwicklung Kölns zu einem pulsierenden Kunstzentrum.</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 rounded-2xl rotate-3 opacity-10" style="background-color: var(--color-accent);"></div>
+                    <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                         alt="Historische Kunst" class="relative rounded-2xl shadow-lg w-full h-64 object-cover">
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="space-y-2">
+                    <div class="timeline-item">
+                        <div class="timeline-connector"></div>
+                        <h4 class="text-xl font-bold">Die Gründerzeit (1880 - 1920)</h4>
+                        <p class="text-gray-600">Die ersten Kunstsalons</p>
+                        <p class="mt-2">Etablierung der ersten kommerziellen Kunstgalerien, die sich auf klassische Malerei und aufstrebende lokale Talente konzentrieren.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-connector"></div>
+                        <h4 class="text-xl font-bold">Die Nachkriegsmoderne (1950 - 1970)</h4>
+                        <p class="text-gray-600">Aufbruch und Avantgarde</p>
+                        <p class="mt-2">Köln wird zum Zentrum für Fluxus und zeitgenössische Kunst. Galerien wie die Galerie 22 sind Pioniere der jungen Kunstszene.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-connector"></div>
+                        <h4 class="text-xl font-bold">Art Cologne & der Aufstieg (1980 - heute)</h4>
+                        <p class="text-gray-600">Internationale Anerkennung</p>
+                        <p class="mt-2">Mit der Gründung der Art Cologne etabliert sich die Stadt als globaler Player im Kunstmarkt. Zahlreiche Galerien eröffnen und stärken das internationale Profil Kölns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galerien" class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-4" style="color: var(--color-primary);">Kölner Galerien</h2>
+            <p class="text-center text-xl text-gray-600 mb-8">Eine vollständige Liste der wichtigsten Galerien nach Alphabet</p>
+
+            <div class="alphabet-nav text-center mb-12 flex justify-center flex-wrap">
+                <a href="#A" class="active">A</a>
+                <a href="#B">B</a>
+                <a href="#C">C</a>
+                <a href="#D">D</a>
+                <a href="#E">E</a>
+                <a href="#F">F</a>
+                <a href="#G">G</a>
+                <a href="#H">H</a>
+                <a href="#I">I</a>
+                <a href="#J">J</a>
+                <a href="#K">K</a>
+                <a href="#L">L</a>
+                <a href="#M">M</a>
+                <a href="#N">N</a>
+                <a href="#O">O</a>
+                <a href="#P">P</a>
+                <a href="#Q">Q</a>
+                <a href="#R">R</a>
+                <a href="#S">S</a>
+                <a href="#T">T</a>
+                <a href="#U">U</a>
+                <a href="#V">V</a>
+                <a href="#W">W</a>
+                <a href="#X">X</a>
+                <a href="#Y">Y</a>
+                <a href="#Z">Z</a>
+            </div>
+
+            <div class="gallery-list-container space-y-12">
+                <div id="A" class="active">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary);">A</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Falko Alexander</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Nord · Venloer Straße 24</p>
+                            <a href="https://www.falko-alexander.com" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Art Galerie 7 - Meike Knüppe</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Nord · Sankt-Apern-Straße 7</p>
+                            <a href="https://www.artgalerie7.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="B">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary);">B</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Biesenbach</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Süd · Lindenstraße 34</p>
+                            <a href="https://www.biesenbach.net" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Boisserée</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Nord · Drususgasse 7 – 11</p>
+                            <a href="https://www.boisseree.com" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Buchholz</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Nord · Neven-DuMont-Straße 17</p>
+                            <a href="https://www.galeriebuchholz.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="C">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary);">C</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Gisela Capitain</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Nord · St.-Apern-Straße 26</p>
+                            <a href="https://www.galerie-capitain.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Clages</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Süd · Brüsseler Straße 5</p>
+                            <a href="https://www.clages.com" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="D">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary);">D</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Drei</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Süd · Jülicher Straße 14</p>
+                            <a href="https://www.drei.co" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Helmut Dreiseitel</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Süd · Rheingasse 14</p>
+                            <a href="https://www.dreiseitel.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="F">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary);">F</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">fiebach, minninger</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Nord · Venloer Straße 26</p>
+                            <a href="https://www.fiebach-minninger.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Floss & Schultz</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Süd · Steinstraße 37</p>
+                            <a href="https://www.flossundschultz.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="G">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary);">G</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Gaa</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Nord · Antwerpener Straße 4</p>
+                            <a href="https://www.gaa.gallery" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Gathering</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Süd · Roonstraße 108</p>
+                            <a href="https://www.gathering.gallery" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Karsten Greve</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Nord · Drususgasse 1 – 5</p>
+                            <a href="https://www.galerie-karsten-greve.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Van der Grinten Galerie</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Nord · Gertrudenstraße 29</p>
+                            <a href="https://www.vandergrintengalerie.com" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="I">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary);">I</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">in focus Galerie - Burkhard Arnold</h4>
+                            <p class="text-gray-600 mb-4">Rodenkirchen · Hauptstraße 114</p>
+                            <a href="https://www.infocus-galerie.com" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="J">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary);">J</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Josey</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Nord · Gladbacher Str. 25</p>
+                            <a href="https://www.josey.info" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="K">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary);">K</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Martina Kaiser</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Nord · Bismarckstraße 50n</p>
+                            <a href="https://www.galeriemartinakaiser.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Jan Kaps</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Süd · Lindenstraße 20</p>
+                            <a href="https://www.jankaps.com" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Kaune Contemporary Gallery</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Nord · Gereonskloster 12 (Kapelle)</p>
+                            <a href="https://www.kaune-contemporary.com" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Werner Klein</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Süd · Volksgartenstraße 10</p>
+                            <a href="https://www.galeriewernerklein.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Anja Knoess</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Nord · Große Brinkgasse 17</p>
+                            <a href="https://www.galerie-anja-knoess.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Krings-Ernst Galerie</h4>
+                            <p class="text-gray-600 mb-4">Bayenthal · Goltsteinstraße 106/110</p>
+                            <a href="https://www.krings-ernst.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Martin Kudlek</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Süd · Schaafenstraße 25</p>
+                            <a href="https://www.martinkudlek.com" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="L">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary);">L</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Jari Lager Gallery</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Süd · Wormser Straße 23</p>
+                            <a href="https://www.jarilager.com" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">LC Queisser</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Nord · Sankt-Apern-Straße 13</p>
+                            <a href="https://www.lcqueisser.com" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Christian Lethert</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Nord · Antwerpener Straße 52</p>
+                            <a href="https://www.christianlethert.com" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="M">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary);">M</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">M29 – Richter</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Süd · Moltkestraße 27a</p>
+                            <a href="https://www.m29-richter.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Martinetz</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Nord · Moltkestraße 81</p>
+                            <a href="https://www.martinetz.art" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Ulrich Mueller</h4>
+                            <p class="text-gray-600 mb-4">Klettenberg · Breibergstraße 1</p>
+                            <a href="https://www.galerie-ulrich-mueller.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="N">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary);">N</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Nagel Draxler</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Nord · Elisenstraße 4–6</p>
+                            <a href="https://www.nagel-draxler.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="P">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary);">P</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Parrotta Contemporary Art</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Süd · Brüsseler Straße 21</p>
+                            <a href="https://www.parrottacontemporaryart.com" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Priska Pasquer</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Nord · Konrad-Adenauer-Ufer 83</p>
+                            <a href="https://www.priskapasquer.com" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Berthold Pott</h4>
+                            <p class="text-gray-600 mb-4">Ehrenfeld · Widdersdorfer Straße 185</p>
+                            <a href="https://www.bertholdpott.com" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="R">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary);">R</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">R;68</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Nord · Bismarckstraße 68</p>
+                            <a href="https://www.r-68.com" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Rehbein Galerie</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Süd · Große Brinkgasse 31</p>
+                            <a href="https://www.rehbein-galerie.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Philipp von Rosen Galerie</h4>
+                            <p class="text-gray-600 mb-4">Neustadt-Süd · Gertrudenstraße 24-28</p>
+                            <a href="https://www.rosen-galerie.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Ruttkowski;68</h4>
+                            <p class="text-gray-600 mb-4">Ehrenfeld · Lichtstraße 8–24</p>
+                            <a href="https://www.ruttkowski68.com" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="S">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary);">S</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Julian Sander</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Süd · Bonner Str. 82</p>
+                            <a href="https://www.galeriejuliansander.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Brigitte Schenk</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Nord · Albertusstraße 26</p>
+                            <a href="https://www.brigitteschenk.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Anke Schmidt</h4>
+                            <p class="text-gray-600 mb-4">Bayenthal · Schönhauser Straße 8</p>
+                            <a href="https://www.galerie-ankeschmidt.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Alex Serra</h4>
+                            <p class="text-gray-600 mb-4">Nippes · Niehler Straße 104</p>
+                            <a href="https://www.galerie-alex-serra.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Galerie Der Spiegel</h4>
+                            <p class="text-gray-600 mb-4">Altstadt-Nord · Richartzstraße 10</p>
+                            <a href="https://www.galerie-der-spiegel.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Z">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary);">Z</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="gallery-item bg-gray-100 p-6 rounded-2xl">
+                            <h4 class="text-2xl font-bold mb-3">Zander Galerie</h4>
+                            <p class="text-gray-600 mb-4">Bayenthal · Schönhauser Straße 8</p>
+                            <a href="https://www.zander-galerie.de" rel="nofollow" target="_blank" class="text-sm bg-black text-white px-4 py-2 rounded-full inline-block">Website besuchen</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="ueber-uns" class="py-20 px-6 bg-white">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div class="relative">
+            <div class="absolute -inset-6 rounded-2xl rotate-3 opacity-10" style="background-color: var(--color-accent);"></div>
+            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                 alt="Über uns" class="relative rounded-2xl shadow-xl w-full object-cover">
+        </div>
+        <div>
+            <h2 class="text-4xl font-bold mb-6" style="color: var(--color-primary);">Über Galerien.Köln</h2>
+            <p class="text-lg text-gray-600 mb-4">
+                **Galerien.Köln** wurde als sorgfältig konzipiertes Showcase-Projekt ins Leben gerufen – als Beweis dafür, wie eine Premium-Domain mit einem klaren, minimalistischen Design und nützlichen Inhalten zu einer wertvollen Anlaufstelle werden kann. Das Ziel war von Anfang an, ein einfaches und sauberes digitales Verzeichnis zu schaffen, das die reiche Kunstszene Kölns ehrt und einen Mehrwert für Kunstliebhaber, Sammler und Galeristen bietet.
+            </p>
+            <p class="text-lg text-gray-600 mb-4">
+                Als Entwickler und Designer habe ich diese Plattform mit dem klaren Fokus auf Nutzerfreundlichkeit, schnelle Ladezeiten und eine intuitive Struktur aufgebaut. Jeder Code-Abschnitt und jedes Design-Element wurde optimiert, um eine professionelle und vertrauenswürdige Grundlage zu schaffen. Was Sie hier sehen, ist mehr als nur eine Website; es ist das funktionsfähige Fundament für ein digitales Kunstprojekt, das sofort starten kann.
+            </p>
+            <p class="text-lg text-gray-600 mb-4">
+                Nun ist es Zeit, dieses Projekt in neue Hände zu geben. **Die Premium-Domain Galerien.Köln und dieses gesamte digitale Schaufenster stehen zum Verkauf.** Dies ist eine einzigartige Gelegenheit für eine Einzelperson, ein Kunstmagazin oder ein Unternehmen, das die Kölner Kunstlandschaft schätzt und eine sofort einsatzbereite, erstklassige Online-Präsenz übernehmen möchte.
+            </p>
+            <p class="text-lg text-gray-600">
+                Nutzen Sie diese Gelegenheit, um die definierende Online-Ressource für die Galerien in Köln zu besitzen.
+            </p>
+        </div>
+    </div>
+</section>
+
+    <footer class="py-12 px-6 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Galerien.Köln</h3>
+                <p class="text-gray-400">Das definitive Archiv und Verzeichnis der Kunstlandschaft Kölns.</p>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-4">Navigation</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#chronik" class="hover:underline">Chronik</a></li>
+                    <li><a href="#galerien" class="hover:underline">Galerien</a></li>
+                    <li><a href="#ueber-uns" class="hover:underline">Über uns</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-4">Kontakt</h4>
+                <p class="text-gray-400">info@galerien.koeln</p>
+                <p class="text-gray-400"><a href="datenschutz.html">Impressum / Datenschutz</a></p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-white border-opacity-10 text-center text-gray-400">
+            <p>© 2025 Galerien.Köln. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.alphabet-nav a');
+            const gallerySections = document.querySelector('.gallery-list-container');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links and sections
+                    navLinks.forEach(nav => nav.classList.remove('active'));
+                    document.querySelectorAll('.gallery-list-container > div').forEach(section => section.classList.remove('active'));
+
+                    // Add active class to the clicked link
+                    link.classList.add('active');
+                    
+                    // Show the corresponding gallery section
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+
+            // Set initial state
+            document.querySelector('#A').classList.add('active');
+            document.querySelector('.alphabet-nav a[href="#A"]').classList.add('active');
+        });
+    </script>
+</body>
+</html>
