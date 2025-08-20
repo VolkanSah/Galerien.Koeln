@@ -129,10 +129,15 @@ Stay clean, stay healthy, and happy coding!
     .gallery-list-container > div.active {
         display: block;
     }
+#main-content {
+  display: none;
+}
+    
 </style>
 
  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+      <div id="main-content">
 <body>
     <nav class="fixed w-full z-50 nav-bg py-4 px-6 shadow-sm">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
@@ -1147,6 +1152,19 @@ Stay clean, stay healthy, and happy coding!
             document.querySelector('.alphabet-nav a[href="#A"]').classList.add('active');
         });
     </script>
+      </div>
+
+  <noscript>
+    <div class="no-js-message">
+      <h2>JavaScript ist deaktiviert</h2>
+      <p>Bitte aktiviere JavaScript, um diese Seite optimal nutzen zu können.</p>
+    </div>
+  </noscript>
+  
+  <script>
+    document.getElementById('main-content').style.display = 'block';
+  </script>
 </body>
 </html>
+
 
