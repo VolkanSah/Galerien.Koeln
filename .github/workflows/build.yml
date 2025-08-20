@@ -1,0 +1,32 @@
+name: Build Tailwind CSS
+
+on:
+  # Der Workflow soll immer dann starten, wenn du Code pushst
+  push:
+    branches:
+      - main # Oder dein Haupt-Branch, z.B. master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install -D tailwindcss
+
+      - name: Run Tailwind CLI
+        run: npx tailwindcss -i ./tailwind.config.js -o ./dist/tailwind.css --minify
+
+      - name: Upload production assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: built-files
+          path: dist/
