@@ -1,39 +1,50 @@
-name: Build Tailwind CSS
+# Der Name des Workflows, der in den GitHub Actions-Logs angezeigt wird.
+name: Tailwind CSS Build Pipeline
 
+# Definiert, wann dieser Workflow laufen soll.
 on:
-  # Der Workflow soll immer dann starten, wenn du Code pushst
+  # Er startet automatisch bei jedem Push auf den 'main'-Branch.
   push:
     branches:
-      - main # Oder dein Haupt-Branch, z.B. master
+      - main
 
+# Ein Workflow besteht aus einem oder mehreren Jobs. 'build' ist der Name dieses Jobs.
 jobs:
   build:
+    # Der Job läuft auf einem virtuellen Linux-Server.
     runs-on: ubuntu-latest
 
+    # Definiert die Schritte, die in diesem Job nacheinander ausgeführt werden.
     steps:
-      - name: Checkout repository
+      # Schritt 1: Holt den Quellcode deines GitHub-Repositorys.
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # Schritt 2: Stellt die richtige Node.js-Version auf dem Server bereit.
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Install Node dependencies
+      # Schritt 3: Installiert die in deiner package.json definierten Pakete (hier Tailwind).
+      - name: Install Dependencies
         run: npm install
 
-      - name: Create dist directory
-        run: mkdir dist
+      # Schritt 4: Erstellt den 'dist'-Ordner, falls er noch nicht existiert.
+      - name: Create 'dist' Directory
+        run: mkdir -p dist
 
-      - name: Run Tailwind build
+      # Schritt 5: Führt das Build-Skript aus deiner package.json aus.
+      # Dieses Skript kompiliert Tailwind und speichert das Ergebnis in dist/tailwind.css.
+      - name: Run Tailwind Build
         run: npm run build
 
-      - name: List files for debugging
-        run: ls -lR
-
-      - name: Upload production assets
+      # Schritt 6: Speichert die generierte Datei als 'Artifact'.
+      # Ein Artifact ist eine Datei, die du nach dem Lauf herunterladen kannst.
+      - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
+          # Der Name des Artefakts. So kannst du es in den Logs finden.
           name: built-files
-          path: dist/
+          # Der Pfad zu dem Ordner, der hochgeladen werden soll.
           path: dist/
