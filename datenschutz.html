@@ -57,11 +57,18 @@
                     [Postleitzahl und Ort]
                 </p>
                 <h3 class="text-xl font-bold mt-4 mb-2">Kontakt</h3>
-                <p>
-                    E-Mail: <a href="mailto:seomobil@gmail.com" class="text-blue-600 hover:underline">
-seomobil/at/gmaail.com</a><br>
-                    Telefon: [Telefonnummer, optional]
-                </p>
+<p>
+    E-Mail: <span id="email-adresse"></span>
+</p>
+<script>
+    // Die E-Mail-Adresse in Base64 kodieren
+    var encoded_email = "c2VvbW9iaWxAZ21haWwuY29t";
+    var email = atob(encoded_email);
+    
+    // Link erstellen und einfügen
+    var email_link = document.getElementById("email-adresse");
+    email_link.innerHTML = '<a href="mailto:' + email + '" class="text-blue-600 hover:underline">' + email + '</a>';
+</script>
                 <h3 class="text-xl font-bold mt-4 mb-2">Umsatzsteuer-ID</h3>
                 <p>
                     [Ihre Umsatzsteuer-Identifikationsnummer gemäß § 27 a UStG, optional]
@@ -141,5 +148,6 @@ seomobil/at/gmaail.com</a><br>
   </script>
 </body>
 </html>
+
 
 
