@@ -31,10 +31,14 @@
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
         }
+        #main-content {
+  display: none;
+}
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+      <div id="main-content">
     <nav class="fixed w-full z-50 nav-bg py-4 px-6 shadow-sm">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold" style="color: var(--color-primary);">Galerien.Köln</a>
@@ -119,5 +123,18 @@ seomobil/at/gmaail.com</a><br>
             <p>© 2025 Galerien.Köln. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
+           </div>
+
+  <noscript>
+    <div class="no-js-message">
+      <h2>JavaScript ist deaktiviert</h2>
+      <p>Bitte aktiviere JavaScript, um diese Seite optimal nutzen zu können.</p>
+    </div>
+  </noscript>
+  
+  <script>
+    document.getElementById('main-content').style.display = 'block';
+  </script>
 </body>
 </html>
+
