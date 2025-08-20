@@ -22,11 +22,18 @@ jobs:
       - name: Install Node dependencies
         run: npm install
 
+      - name: Create dist directory
+        run: mkdir dist
+
       - name: Run Tailwind build
         run: npm run build
+
+      - name: List files for debugging
+        run: ls -lR
 
       - name: Upload production assets
         uses: actions/upload-artifact@v4
         with:
           name: built-files
+          path: dist/
           path: dist/
