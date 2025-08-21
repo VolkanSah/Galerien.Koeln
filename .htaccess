@@ -1,0 +1,63 @@
+# Rewrite-Engine aktivieren
+RewriteEngine On
+
+# www. auf Nicht-www. umleiten
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# HTTP auf HTTPS umleiten
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Gzip-Komprimierung fÃ¼r ausgewÃ¤hlte Dateitypen
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css application/javascript application/x-javascript application/json
+</IfModule>
+
+# Browser-Caching festlegen
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  # Statische Ressourcen (CSS, JS) fÃ¼r 1 Jahr cachen
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
+
+  # Bilder fÃ¼r 1 Jahr cachen
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+
+  # HTML-Dateien kurz cachen (da sich der Inhalt Ã¤ndert)
+  ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# Sicherheitshauptstadt - HinzugefÃ¼gte und Ã¼berprÃ¼fte Header
+# php_flag expose_php off
+<IfModule mod_headers.c>
+    # Erzwingt HTTPS fÃ¼r alle zukÃ¼nftigen Besuche der Webseite.
+    # WICHTIG: Nur hinzufÃ¼gen, wenn die Seite komplett HTTPS-fÃ¤hig ist.
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+    # Verhindert, dass die Seite in einem Iframe geladen wird, schÃ¼tzt vor Clickjacking.
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # SchÃ¼tzt vor Cross-Site Scripting (XSS) und anderen Code-Einschleusungen.
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Verhindert, dass der Browser den MIME-Typ von Ressourcen errÃ¤t.
+    Header always set X-Content-Type-Options "nosniff"
+    # SchÃ¼tzt vor Cross-Origin-Problemen und kontrolliert, welche Ressourcen geladen werden dÃ¼rfen.
+    Header always set Content-Security-Policy "default-src https: 'self' data: 'unsafe-inline'; connect-src 'self'"
+#Header always set Content-Security-Policy "default-src https: 'self' data:; connect-src 'self'; script-src 'self' 'sha256-N/8hT8Jb30b4H12z/P8YqQd3Z4e8L1P0g4g/K0v/S0=' 'sha256-Rk67iUj8Wk7N5mG9y8G4L9B8h4h7V7y/S9N8b8c2J1V8='"
+  #  Header set Content-Security-Policy "default-src https: 'self' data:; connect-src 'self'"
+    Header always set Cross-Origin-Opener-Policy "same-origin"
+    Header always set Cross-Origin-Resource-Policy "same-origin"
+    Header always set Cross-Origin-Embedder-Policy "require-corp"
+    Header always set X-Permitted-Cross-Domain-Policies "none"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    Header always set Referrer-Policy "no-referrer-when-downgrade"
+</IfModule>
