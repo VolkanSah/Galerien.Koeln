@@ -169,7 +169,19 @@
 <div class="relative">
     <div class="absolute -inset-6 bg-white rounded-2xl rotate-3 opacity-10"></div>
     <div class="absolute -inset-3 bg-gray-700 rounded-2xl -rotate-2 opacity-10"></div>
-    <img src="koeln-galerien.webp" alt="Kunst in Köln" class="relative rounded-2xl shadow-xl w-full object-cover" width="616" height="924" fetchpriority="high">
+    <img
+  src="koeln-galerien-large.webp"
+  alt="Kunst in Köln"
+  class="relative rounded-2xl shadow-xl w-full object-cover"
+  width="616"
+  height="924"
+  fetchpriority="high"
+  srcset="koeln-galerien-small.webp 616w, koeln-galerien-large.webp 924w"
+  sizes="(max-width: 600px) 616px, 924px"
+/>
+
+
+
 </div>
         </div>
     </section>
@@ -186,7 +198,16 @@
                 </div>
                 <div class="relative">
                     <div class="absolute -inset-4 rounded-2xl rotate-3 opacity-10" style="background-color: var(--color-accent);"></div>
-                    <img src="galerien-in-koeln.webp" alt="Historische Kunst" class="relative rounded-2xl shadow-lg w-full h-64 object-cover">
+<img 
+  src="galerien-in-koeln.webp" 
+  alt="Historische Kunst" 
+  class="relative rounded-2xl shadow-lg w-full h-64 object-cover" 
+  width="810" 
+  height="540" 
+  srcset="galerien-in-koeln-small.webp 405w, galerien-in-koeln.webp 810w" 
+  sizes="(max-width: 600px) 405px, 810px" 
+>
+					
                 </div>
             </div>
 
@@ -963,7 +984,17 @@
     <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div class="relative">
             <div class="absolute -inset-6 rounded-2xl rotate-3 opacity-10" style="background-color: var(--color-accent);"></div>
-            <img src="volkansah.webp"alt="Über uns" class="relative rounded-2xl shadow-xl w-full object-cover">
+            <img 
+  src="volkansah.webp" 
+  alt="Über Volkan Sah" 
+  class="relative rounded-2xl shadow-xl w-full object-cover" 
+  width="616" 
+  height="924" 
+  srcset="volkansah-small.webp 308w, volkansah.webp 616w" 
+  sizes="(max-width: 600px) 308px, 616px" 
+>
+
+			
         </div>
 <div>
     <h2 class="text-4xl font-bold mb-6" style="color: var(--color-primary);">Ein Portfolio-Projekt: Galerien.koeln</h2>
@@ -1055,4 +1086,5 @@
   </script>
 </body>
 </html>
+
 
