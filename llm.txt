@@ -1,0 +1,14 @@
+# Regeln für alle KI-Modelle.
+# Die Bots müssen diese Regeln lesen und befolgen.
+User-agent: *
+
+# Erlaubt die Nutzung der Inhalte für wissenschaftliches Training und KI-Entwicklung.
+# Dein Beitrag zur Wissenschaft und Forschung.
+Llm-use: Allow-Training
+
+# Verbietet die direkte Wiedergabe von Inhalten in Chatbots oder automatisierten Antworten.
+# So wird deine Arbeit nicht einfach kopiert.
+Llm-use: Disallow-Direct-Answers
+
+# Alle Teile der Website sind für das Scannen erlaubt.
+Allow: /
